@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../common/strings.dart' as strings;
 import 'notes_screen.dart';
-import 'settings_screen.dart';
 
 /// StatefulWidget is a widget that can change over time
 class HomeScreen extends StatefulWidget {
@@ -44,14 +43,12 @@ class HomeScreenState extends State<HomeScreen> {
           bottom: const TabBar(tabs: [
             Tab(icon: Icon(Icons.home), text: strings.homeTabTitle),
             Tab(icon: Icon(Icons.chat), text: strings.notesTabTitle),
-            Tab(icon: Icon(Icons.settings), text: strings.settingsTabTitle),
           ]),
         ),
         /// TabBarView is a widget that displays the current tab's contents
         body: TabBarView(children: [
           const HomeTab(),
           NotesTab(notes: notes),
-          SettingsTab(updateColors: updateColors),
         ]),
         /// FloatingActionButton is a widget that displays a floating action button
         floatingActionButton: FloatingActionButton.extended(
